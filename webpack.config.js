@@ -64,6 +64,13 @@ const plugins = () => {
                 collapseWhitespace: isProd,
             }
         },),
+        new HTMLWebpackPlugin({
+            template: paths.src + '/portfolio.html/',
+            filename: 'portfolio.html',
+            minify: {
+                collapseWhitespace: isProd,
+            }
+        },),
         new NodemonPlugin({
             script: 'webpack.config.prod.js',
             watch: './src/images/',
