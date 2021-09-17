@@ -8,6 +8,7 @@ const path = require('path'),
   ImageminWebp = require('imagemin-webp'),
   NodemonPlugin = require('nodemon-webpack-plugin'),
   autoprefixer = require('autoprefixer'),
+  ErrorOverlayPlugin = require('error-overlay-webpack-plugin'),
   TerserPlugin = require('terser-webpack-plugin');
 
 const paths = {
@@ -67,6 +68,7 @@ const plugins = () => {
         collapseWhitespace: isProd,
       },
     }),
+    new ErrorOverlayPlugin(),
     new HTMLWebpackPlugin({
       template: paths.src + '/contacts.html/',
       filename: 'contacts.html',
@@ -127,7 +129,7 @@ module.exports = {
   },
   optimization: optimization(),
   plugins: plugins(),
-  devtool: isProd ? false : 'source-map',
+  devtool: 'cheap-module-source-map',
   module: {
     rules: [
       {

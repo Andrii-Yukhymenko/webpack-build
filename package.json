@@ -22,6 +22,7 @@
     "copy-webpack-plugin": "^8.1.0",
     "cross-env": "^7.0.3",
     "css-loader": "^5.2.0",
+    "error-overlay-webpack-plugin": "^1.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-react": "^7.25.1",
     "html-loader": "^2.1.2",
